@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<h1> <b>Dennis sin nettside</b> </h1>
+<h2> <sup>Kort om meg sjølv</sup> </h2> 
+<p>Eg heiter Dennis, eg er 16 år gammal. Under meg ser du eit bilde av meg.</p>
+<img src="RAH.jpg" alt=Ung kjekk man smiler style="width:1000px;height:500px;"> 7
+<p>Eg er 16 år og studerer på Stord VGS på IMA linja. Dette er eit bilde av skulen min.</p>
+<p><img src="Stord skule.jpg" alt="Eit bilde av Stord VGS" style="width:1000px;height:300px;margin-left:15px;">
+<p>Eg bor i Fitjar og tar buss til skulen kvar dag. Bussen går 06:58. Og bussen heim fra skulen går 15:08.</p>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dennis sin nettside</title>
+<script> 
+function openPopup() {
+    // Ikkje fjern
+    var url = 'about:blank';
+
+    // Breidde og høgde
+    var width = 500;
+    var height = 850;
+
+    // Kalkuler V H senter
+    var left = (window.innerWidth - width) / 2;
+    var top = (window.innerHeight - height) / 2;
+
+    
+    var features = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,copyhistory=no,resizable=yes';
+
+    // Hold url blank
+    var popup = window.open(url, '_blank', features);
+
+    // Loading screen
+    popup.document.write('<a id="Minlink" href="Mine hobbier.html" target="_self">Laster inn.....</a>');
+
+// Automatisk klikk siden det var lettere og fikse enn og finne ein anna måte. Bra nok er perfekt
+setTimeout(function() {
+    popup.document.getElementById("Minlink").click();
+}, 1500);
+
+
+// Millisekund
+setTimeout(function() {
+    popup.document.getElementById("Minlink").click();
+}, 5000);
+
+
+    // Lukk
+    popup.document.close();
+
+    // Høgde og bredde
+    var targetWidth = 3840;
+    var targetHeight = 1920;
+    var duration = 5000; // IKKJE SEKUND
+
+    //NOTAT: Kommer feilmeldinger ofte. Se til og fikse det i fremtiden. 
+    //SVAR: Såg etter det, fant ikkje grunn. Påvirker ikkje nettsiden så ikkje viktig
+    // Start tid
+    var startTime = null;
+
+    // Animasjon funksjon def
+    function animate(currentTime) {
+        if (!startTime) startTime = currentTime;
+        var elapsedTime = currentTime - startTime;
+        var progress = Math.min(elapsedTime / duration, 1);
+        var newWidth = width + (targetWidth - width) * progress;
+        var newHeight = height + (targetHeight - height) * progress;
+        popup.resizeTo(newWidth, newHeight);
+        // Rekalkuler justering
+        var newLeft = (window.innerWidth - newWidth) / 2;
+        var newTop = (window.innerHeight - newHeight) / 2;
+        popup.moveTo(newLeft, newTop);
+        if (progress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+
+    // Start bredde
+    requestAnimationFrame(animate);
+
+    // Prioriterings fokus
+    if (window.focus) {
+        popup.focus();
+    }
+}
+</script>
+</head>
+<body>
+<button onclick="openPopup()">Mine hobbyer</button>
+</body>
+</html>
+</body> 
