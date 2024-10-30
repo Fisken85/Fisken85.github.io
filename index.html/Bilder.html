@@ -4,29 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Min Portefølje</title>
+    <title>Video og bilderedigering</title>
     <link rel="stylesheet" href="Css/Styles.css">
-    <style>
-        .box-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px;
-        }
-
-        .box {
-            width: 30%;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .box h3 {
-            margin-top: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -48,23 +27,35 @@
         </div>
     </div>
 
-    <div class="content">
-        <h2>Mine Prosjekter</h2>
-        <div class="box-container">
-            <div class="box">
-                <h3 style="font-family:verdana;">Produksjon og historiefortelling</h3>
-                <p>Ting eg har produsert</p>
-            </div>
-            <div class="box">
-                <h3 style="font-family:verdana;">Konseptutv. og programmering</h3>
-                <p>Ting eg har programmert</p>
-            </div>
-            <div class="box">
-                <h3 style="font-family:verdana;">Teknologiforståelse</h3>
-                <p>Kor bra eg forstår teknologi</p>
-            </div>
-        </div>
-    </div>
+
+    <div class="Forsvunnet-i-IKEA" style="text-align: center;">
+        <h2>Video som eg har redigert</h2>
+        <video controls style="height: auto; width: 1000px;">
+            <source src="Forsvunnet i IKEA.mp4" alt="Ein video som demonstrer mine ferdigheter innen video redigering"  type="video/mp4"> 
+        </video>
+        
+
+        <h2>Mitt visitkort</h2>
+<label for="visitkort_front">
+    <img src="Bilder/Visitkort_front.jpg" alt="Eit monogram eg har laga på visitkortet mitt" class="clickable-image">
+</label>
+<input type="checkbox" id="visitkort_front" class="overlay-toggle">
+<div class="overlay">
+    <label class="overlay-content" for="visitkort_front">
+        <img src="Bilder/Visitkort_front.jpg" alt="Eit monogram eg har laga på visitkortet mitt" class="overlay-image">
+    </label>
+</div>
+
+<label for="visitkort_bak">
+    <img src="Bilder/Visitkort_kontakt_info.jpg" alt="Bakdelen av visitkortet mitt, som viser min kontakinformasjon" class="clickable-image">
+</label>
+<input type="checkbox" id="visitkort_bak" class="overlay-toggle">
+<div class="overlay">
+    <label class="overlay-content" for="visitkort_bak">
+        <img src="Bilder/Visitkort_kontakt_info.jpg" alt="Bakdelen av visitkortet mitt, som viser min kontakinformasjon" class="overlay-image">
+    </label>
+</div>
+
 
     <footer>
         <p>&copy; 2024 Code Buddie's</p>
@@ -95,4 +86,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFDDCC;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #88BB6B;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.menu-icon {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #575757;
+}
+
+.side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 36px;
+    color: white;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #444;
+    padding-left: 20px;
+}
+
+.dropdown-btn {
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-btn .arrow {
+    float: right;
+    margin-right: 10px;
+}
+
+.dropdown-btn .arrow.down {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+}
+
+.side-menu.open {
+    width: 250px;
+}
+
+.content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #88BB6B;
+}
+
+h2 {
+    color: #414e39;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.clickable-image {
+    width: auto; 
+    height: auto;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-toggle {
+    display: none; 
+}
+
+.overlay-toggle:checked + .overlay {
+    display: flex; 
+}
+
+.overlay-content {
+    cursor: pointer;
+}
+
+.overlay-image {
+    width: 1000px; 
+    height: auto; 
+    max-height: 1000px; 
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+
