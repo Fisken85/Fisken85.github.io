@@ -1,32 +1,10 @@
 <!DOCTYPE html>
 <html lang="no">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Min Portefølje</title>
     <link rel="stylesheet" href="Css/Styles.css">
-    <style>
-        .box-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px;
-        }
-
-        .box {
-            width: 30%;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .box h3 {
-            margin-top: 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -46,27 +24,32 @@
             <a href="Mine hobbier.html">Mine hobbier</a>
             <a href="Bilder.html">Bilde og video redigering</a>
         </div>
-        <a href="Kontakt.html">Kontakt meg</a>
+        <a href="index.html">Kontakt meg</a>
     </div>
 
-    <div class="content">
-        <h2>Mine Prosjekter</h2>
-        <div class="box-container">
-            <div class="box">
-                <h3 style="font-family:verdana;">Produksjon og historiefortelling</h3>
-                <p>Ting eg har produsert</p>
-            </div>
-            <div class="box">
-                <h3 style="font-family:verdana;">Konseptutv. og programmering</h3>
-                <p>Ting eg har programmert</p>
-            </div>
-            <div class="box">
-                <h3 style="font-family:verdana;">Teknologiforståelse</h3>
-                <p>Kor bra eg forstår teknologi</p>
-            </div>
-        </div>
-    </div>
+    <!-- SKJEMA -->
+    <section id="Skjema">
+        <h2>Kontakt meg</h2>
+        <form action="https://formspree.io/f/mvgoakbb" method="POST">
+            <label for="fornavn">Fornavn:</label><br>
+            <input type="text" id="fornavn" name="fornavn" required><br><br>
 
+            <label for="etternavn">Etternavn:</label><br>
+            <input type="text" id="etternavn" name="etternavn" required><br><br>
+
+            <label for="epost">E-post:</label><br>
+            <input type="email" id="epost" name="epost" required><br><br>
+
+            <label for="telefonnummer">Telefonnummer:</label><br>
+            <input type="tel" id="telefonnummer" name="telefonnummer" required><br><br>
+
+            <label for="melding">Melding:</label><br>
+            <textarea id="melding" name="melding" rows="4" cols="50" required></textarea><br><br>
+
+            <input type="submit" value="Send">
+        </form>
+    </section>
+    
     <footer>
         <p>&copy; 2024 Code Buddie's</p>
     </footer>
