@@ -30,6 +30,56 @@
         <a href="index.html">Kontakt meg</a>
     </div>
 
+    <!--FILM SKJEMA-->
+    <!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrer Favorittfilmer</title>
+    <link rel="stylesheet" href="Css/Styles.css">
+</head>
+
+
+    <!-- FAVORITTFILM REGISTRERINGSSKJEMA -->
+    <section id="Movie-Registration">
+        <h2>Legg til en film</h2>
+        <form action="https://formspree.io/f/mvgoakbb" method="POST">
+            <label for="film-tittel">Tittel på filmen:</label><br>
+            <input type="text" id="film-tittel" name="film-tittel" required><br><br>
+
+            <label for="Årstall">Årstall filmen kom ut:</label><br>
+            <input type="number" id="Årstall" name="Årstall" min="1888" max="2030" required><br><br>
+
+            <label for="category">Velg kategori:</label><br>
+            <select id="category" name="category" required>
+                <option value="Action">Action</option>
+                <option value="Komedie">Komedie</option>
+                <option value="Thriller">Triller</option>
+                <option value="Drama">Drama</option>
+                <option value="Skrekk">Skrekk</option>
+                <option value="Forskning fantasi">Forskning fantasi</option>
+                <option value="Romanse">Romanse</option>
+                <option value="Animasjon">Animasjon</option>
+                <option value="Eventyr">Eventyr</option>
+                <option value="Triller romanse">Triller romanse</option>
+            </select><br><br>
+
+            <input type="submit" value="Registrer film">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Din Portefølje</p>
+    </footer>
+
+    <script>
+        // JavaScript kan legges til her for eventuelle funksjoner, hvis nødvendig
+    </script>
+</body>
+</html>
+
+
     <!-- SKJEMA -->
     <section id="Skjema">
         <h2>Kontakt meg</h2>
