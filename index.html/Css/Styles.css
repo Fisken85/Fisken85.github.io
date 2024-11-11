@@ -152,5 +152,33 @@ footer {
     transform: translate(-50%, -50%);
 }
 
-
-
+.Film-registrering {
+    width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(227, 0, 0);
+    padding: 20px;
+}
+.Skjema {
+    width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(227, 0, 0);
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    margin-bottom: 1px;
+    color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+}
