@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pc Komponentar</title>
+    <link rel="stylesheet" href="Css/Styles pc.css">
+</head>
+<body>
+    <div class="title">PC KOMPONENTAR</div>
+
+    <div class="button-container">
+    <button onclick="document.getElementById('CPU').scrollIntoView({behavior: 'smooth'});">CPU</button>
+    <button onclick="document.getElementById('GPU').scrollIntoView({behavior: 'smooth'});">GPU</button>
+    <button onclick="document.getElementById('RAM').scrollIntoView({behavior: 'smooth'});">RAM/Minne</button>
+    <button onclick="document.getElementById('HDD').scrollIntoView({behavior: 'smooth'});">HDD</button>
+    <button onclick="document.getElementById('SSD').scrollIntoView({behavior: 'smooth'});">SSD</button>
+    <button onclick="document.getElementById('PSU').scrollIntoView({behavior: 'smooth'});">PSU</button>
+    <button onclick="document.getElementById('HOVEDKORT').scrollIntoView({behavior: 'smooth'});">Hovedkort</button>
+    <button onclick="document.getElementById('KABINETT').scrollIntoView({behavior: 'smooth'});">Kabinett</button>
+    </div>
+
+
+
+    <!--CPU/Prosessor-->
+    <div id="CPU" class="CPU_Prosessor">
+        <div class="imageCPU">
+            <img src="Bilder/CPU.png" alt="Bilde av ein prosessor">
+        </div>
+        <div class="text">
+            <h2>CPU/Prosessor</h2>
+        <p>Prosessoren er hjernen i ein datamaskin. Den er ansvarleg for å berekne og håndtere alt som skjer på maskina. Når du åpner ei nettside, eit dokument eller ein app, er det prosessoren som utfører alle berekningane og sørger for at alt fungerer som det skal.</p>        </div>
+    </div>
+
+    <!--GPU/Grafikkort-->
+<div id="GPU" class="GPU_Grafikkort">
+    <div class="imageGPU">
+        <img src="Bilder/Titan_V.png" alt="Bilde av eit grafikkkort">
+    </div>
+    <div class="text">
+        <h2>GPU/Grafikkort</h2>
+        <p>Grafikkortet gjer at du kan sjå bilder på datamaskinen din. Nokre prosessorar kan også vise bilder men eit grafikkort er mykje raskare. Dette er fordi prosessoren er designa for å håndtere kompliserte og tunge berekningar, er grafikkortet laget for og utføre raske og enkle berekningar. Dette gjer det bra for å vise grafikk og bilder.</p>
+    </div>
+</div>
+
+
+    <!--RAM/MINNE-->
+    <div id="RAM" class="RAM_Minne">
+        <div class="imageRAM">
+            <img src="Bilder/RAM.png" alt="Bilde av ein RAM brikke">
+        </div>
+        <div class="text">
+            <h2>RAM/Minne</h2>
+            <p>RAM er korttidshukommelsen til datamaskinen din. Det fungerer som arbeidsminne og lagrer data som prosessoren bruker for rask tilgang. Nettsider og dokumenter blir ofte lagret i RAM fordi det er mye raskere enn å lagre dem på harddisken din. </p>
+        </div>
+    </div>
+
+    <!--HDD-->
+    <div id="HDD" class="HDD">
+        <div class="imageHDD">
+            <img src="Bilder/HDD.png" alt="Bilde av ein harddisk">
+        </div>
+        <div class="text">
+            <h2>HDD/Harddisk</h2>
+            <p>En HDD lagrer alle filene og dokumentene dine på datamaskinen din. Den skiller seg ut fra RAM ved at den har mye høyere kapasitet, men er også tregere. De mest vanlige harddiskene nå har 500 GB til 1 TB lagringsplass.</p>
+        </div>
+    </div>
+
+    <!--SSD-->
+    <div id="SSD" class="SSD">
+        <div class="imageSSD">
+            <img src="Bilder/SSD.png" alt="Bilde av ein SSD">
+        </div>
+        <div class="text">
+            <h2>SSD</h2>
+            <p>En SSD gjør det samme som en HDD. Det som skiller en SSD fra en HDD, er måten de er oppbygget. SSD-er bruker en annen metode for å lagre data, og er opptil 200 ganger raskere. Det eneste negative er at SSD-er ofte er dyrere enn HDD-er.</p>
+        </div>
+    </div>
+
+    <!--Strømforsyning-->
+    <div id="PSU" class="Strømforsyning">
+        <div class="imageStrømforsyning">
+            <img src="Bilder/PSU.png" alt="Bilde av ein strømforsyning">
+        </div>
+        <div class="text">
+            <h2>PSU/Strømforsyning</h2>
+            <p>Strømforsyningens oppgave er å forsyne de ulike komponentene i datamaskinen din med strøm.</p>
+        </div>
+    </div>
+
+    <!--Hovedkort-->
+    <div id="HOVEDKORT" class="Hovedkort">
+        <div class="imageHovedkort">
+            <img src="Bilder/Motherboard.png" alt="Bilde av eit hovudkort">
+        </div>
+        <div class="text">
+            <h2>Hovedkort</h2>
+            <p>Hovudkortet er der du set inn komponentane. Hovudkortet er laga for å gi deg ein plass der du kan plassere prosessor, GPU og RAM. Den koblar også saman komponentane og sørger for at dei får den rette spenninga frå strømforsyninga.</p>
+        </div>
+    </div>
+
+    <!--Kabinett-->
+    <div id="KABINETT" class="Kabinett">
+        <div class="imageKabinett">
+            <img src="Bilder/Case.png" alt="Bilde av eit tomt kabinett sett fra siden av">
+        </div>
+        <div class="text">
+            <h2>Kabinett</h2>
+            <p>Sist, men ikke minst, kabinettet. Kabinettet er en boks der du plasserer alle komponentene i PC-en din. Selv om det teknisk sett ikke er nødvendig med et kabinett så har kabinetter vifter og andre deler som bidrar til å kjøle ned PC-en, samt gjør det lettere å flytte datamaskinen.</p>
+        </div>
+    </div>    
+</body>
+</html>

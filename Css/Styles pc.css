@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.title {
+    font-size: 36px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.CPU_Prosessor {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.GPU_Grafikkort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.RAM_Minne {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.HDD {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.SSD {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.Strømforsyning {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.Hovedkort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.Kabinett {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.imageCPU {
+    flex: 1;
+    text-align: center;
+}
+
+.imageV {
+    flex: 1;
+    text-align: center;
+}
+
+.imageCPU img {
+    width: 800px;
+    height: 800px;
+}
+
+.imageV img {
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.text {
+    flex: 2;
+    padding-left: 40px;
+}
+
+.text h2 {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+.text p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.imageGPU img {
+    width: 1000px;
+    height: auto;
+}
+
+.imageRAM img {
+    width: 900px;
+    height: 900px;
+}
+
+.imageHDD img {
+    width: 800px;
+    height: 800px;
+}
+
+.imageSSD img {
+    width: 800px;
+    height: 800px;
+
+}
+
+.imageStrømforsyning img {
+    width: 800px;
+    height: 800px;
+}
+
+.imageHovedkort img {
+    width: auto;
+    height: auto;
+}
+
+.imageKabinett img {
+    width: 1037px;
+    height: 778px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff0000;
+}

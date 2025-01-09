@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video og bilderedigering</title>
+    <title>Produksjon og historiefortelling</title>
     <link rel="stylesheet" href="Css/Styles.css">
 </head>
 
@@ -14,16 +14,37 @@
         <h1>Min Portefølje</h1>
     </header>
             
+            
     <div id="sideMenu" class="side-menu">
         <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
         <a href="index.html">Startside</a>
-        <button class="dropdown-btn">Mitt arbeid
+        <button class="dropdown-btn">Om meg
             <i class="arrow down"></i>
         </button>
         <div class="dropdown-container">
-            <a href="Nettside første forsøk.html">Om meg</a>
+            <a href="Nettside første forsøk.html">Personlig informasjon</a>
             <a href="Mine hobbier.html">Mine hobbier</a>
-            <a href="Bilder.html">Bilde og video redigering</a>
+        </div>
+
+        <button class="dropdown-btn">Produksjon
+            <i class="arrow down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="Produksjon og historiefortelling.html">Media</a>
+        </div>
+
+        <button class="dropdown-btn">Programmering
+            <i class="arrow down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="Produksjon og historiefortelling.html"></a>
+        </div>
+
+        <button class="dropdown-btn">Teknologiforståelse
+            <i class="arrow down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Cisco packet tracer</a>
         </div>
         <a href="Kontakt.html">Kontakt meg</a>
     </div>
@@ -31,11 +52,9 @@
 
     <div class="Forsvunnet-i-IKEA" style="text-align: center;">
         <h2>Video som eg har redigert</h2>
-        <video controls style="height: auto; width: 1000px;">
-            <source src="Forsvunnet i IKEA.mp4" alt="Ein video som demonstrer mine ferdigheter innen video redigering"  type="video/mp4"> 
-        </video>
-        
-
+         <iframe width="1000" height="600" src="https://www.youtube.com/embed/HbPAS4WUwiU">
+         </iframe>
+         
         <h2>Mitt visitkort</h2>
 <label for="visitkort_front">
     <img src="Bilder/Visitkort_front.jpg" alt="Eit monogram eg har laga på visitkortet mitt" class="clickable-image">
@@ -62,30 +81,7 @@
         <p>&copy; 2024 Code Buddie's</p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("sideMenu");
-            if (menu.style.width === "250px") {
-                menu.style.width = "0";
-            } else {
-                menu.style.width = "250px";
-            }
-        }
-
-        function closeMenu() {
-            document.getElementById("sideMenu").style.width = "0";
-        }
-
-        document.querySelector(".dropdown-btn").addEventListener("click", function () {
-            this.classList.toggle("active");
-            const dropdownContainer = this.nextElementSibling;
-            if (dropdownContainer.style.display === "block") {
-                dropdownContainer.style.display = "none";
-            } else {
-                dropdownContainer.style.display = "block";
-            }
-        });
-    </script>
+    <script src="Js/Side menu.js"></script>
 </body>
 
 </html>
