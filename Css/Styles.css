@@ -232,3 +232,8 @@ footer {
     width: 90%;
     text-align: justify;
 }
+
+.centered-title {
+    text-align: center;
+}
+
