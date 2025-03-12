@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Filer</title>
+    <link rel="stylesheet" href="Css/Styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <h1>Min Portefølje</h1>
+    </header>
+    <div id="sideMenuContainer"></div>
+
+    <main>
+        <section class="konsept_filer">
+            <div class="konsept_header">
+                <h2>Mine Prosjekter</h2>
+            </div>
+            <div class="konsept_grid-container">
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Hus.py" download>Hus.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Gjett talet.py" download>Gjett talet.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Hello world.py" download>Hello world.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Multiplikasjonstabell.py" download>Multiplikasjonstabell.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Namn og alder.py" download>Namn og alder.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Partal og oddetal.py" download>Partal og oddetal.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Stjerne mønster.py" download>Stjerne mønster.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Summen av to tal.py" download>Summen av to tal.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Små oppgaver/Teikn ein stjerne.py" download>Teikn ein stjerne.py</a>
+                </div>
+                <div class="konsept_grid-item">
+                    <a class="konsept_file-button" href="Pc deler.html">PC Deler</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Last inn meny
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sideMenuContainer').innerHTML = data;
+            });
+    </script>
+    <script src="Js/Side menu.js"></script>
+</body>
+
+</html>

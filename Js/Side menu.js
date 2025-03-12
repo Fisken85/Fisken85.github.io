@@ -1,24 +1,23 @@
+function loadMenu() {
+    fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading menu:', error));
+}
+
 function toggleMenu() {
-    const menu = document.getElementById("sideMenu");
-    if (menu.style.width === "350px") {
-        menu.style.width = "0";
-    } else {
-        menu.style.width = "275px";
-    }   
+    var menu = document.getElementById("sideMenu");
+    menu.style.width = (menu.style.width === "250px") ? "0" : "250px";
 }
 
 function closeMenu() {
     document.getElementById("sideMenu").style.width = "0";
 }
 
-document.querySelectorAll(".dropdown-btn").forEach(function (button) {
-    button.addEventListener("click", function () {
-        this.classList.toggle("active");
-        const dropdownContainer = this.nextElementSibling;
-        if (dropdownContainer.style.display === "block") {
-            dropdownContainer.style.display = "none";
-        } else {
-            dropdownContainer.style.display = "block";
-        }
-    });
-});
+// Dropdown
+function toggleDropdown(dropdownId) {
+    var dropdown = document.getElementById(dropdownId);
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+}

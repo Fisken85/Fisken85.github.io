@@ -13,43 +13,10 @@
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <h1>Min Portefølje</h1>
     </header>
-            
-            
-    <div id="sideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
-        <a href="index.html">Startside</a>
-        <button class="dropdown-btn">Om meg
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Nettside første forsøk.html">Personlig informasjon</a>
-            <a href="Mine hobbier.html">Mine hobbier</a>
-        </div>
 
-        <button class="dropdown-btn">Produksjon
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Produksjon og historiefortelling.html">Media</a>
-        </div>
+    <div id="sideMenuContainer"></div>
 
-        <button class="dropdown-btn">Programmering
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Produksjon og historiefortelling.html"></a>
-        </div>
-
-        <button class="dropdown-btn">Teknologiforståelse
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="#">Cisco packet tracer</a>
-        </div>
-        <a href="Kontakt.html">Kontakt meg</a>
-    </div>
-
-
+    
     <div class="Forsvunnet-i-IKEA" style="text-align: center;">
         <h2>Video som eg har redigert</h2>
          <iframe width="1000" height="600" src="https://www.youtube.com/embed/HbPAS4WUwiU">
@@ -81,6 +48,14 @@
         <p>&copy; 2025 Code Buddie's</p>
     </footer>
 
+    <script>
+        // Load menu
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sideMenuContainer').innerHTML = data;
+            });
+    </script>
     <script src="Js/Side menu.js"></script>
 </body>
 

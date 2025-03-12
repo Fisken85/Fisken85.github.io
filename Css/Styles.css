@@ -102,10 +102,6 @@ h2 {
     color: #414e39;
 }
 
-
-
-
-
 .image-gallery {
     display: flex;
     gap: 10px;
@@ -237,3 +233,40 @@ footer {
     text-align: center;
 }
 
+.konsept_header {
+    text-align: center;
+}
+
+.konsept_grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    justify-items: center;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.konsept_grid-item {
+    width: 100%;
+    text-align: center;
+}
+
+.konsept_file-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+
+.konsept_file-button:hover {
+    background-color: #45a049;
+}

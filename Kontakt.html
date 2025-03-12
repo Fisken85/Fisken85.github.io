@@ -116,6 +116,14 @@
     
 
 </script>
+<script>
+    // Load menu
+    fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('sideMenuContainer').innerHTML = data;
+        });
+</script>
 <script src="Js/Side menu.js"></script>
 </body>
 </html>

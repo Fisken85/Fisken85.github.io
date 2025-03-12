@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="no">
-    <link rel="stylesheet" href="Js/Side menu.js">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +7,15 @@
     <link rel="stylesheet" href="Css/Styles.css">
 </head>
 
-
 <body>
     <header>
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
         <h1>Min Portefølje</h1>
     </header>
-            
-    <div id="sideMenu" class="side-menu">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
-        <a href="index.html">Startside</a>
-        <button class="dropdown-btn">Om meg
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Nettside første forsøk.html">Personlig informasjon</a>
-            <a href="Mine hobbier.html">Mine hobbier</a>
-        </div>
+    
+    <div id="sideMenuContainer"></div>
 
-        <button class="dropdown-btn">Produksjon
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Produksjon og historiefortelling.html">Media</a>
-        </div>
-
-        <button class="dropdown-btn">Programmering
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Pc deler.html">PC komponentar</a>
-        </div>
-
-        <button class="dropdown-btn">Teknologiforståelse
-            <i class="arrow down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="Packet tracer.html">Cisco packet tracer</a>
-        </div>
-        <a href="Kontakt.html">Kontakt meg</a>
-    </div>
-
-    <!---SUBJECT BOX-->
+    <!---FAG KNAPPAR-->
     <div class="content">
         <h2>Mine Prosjekter</h2>
         <div class="box-container">
@@ -58,14 +23,14 @@
                 <h3 style="font-family:verdana;">Produksjon og historiefortelling</h3>
                 <p>Ting eg har produsert</p>
             </div>
-            <div class="box" onclick="window.location.href='Pc deler.html'">
+            <div class="box" onclick="window.location.href='Konseptutv. og programmering.html'">
                 <h3 style="font-family:verdana;">Konseptutv. og programmering</h3>
                 <p>Ting eg har programmert</p>
             </div>
             <div class="box" onclick="window.location.href='Packet tracer.html'">
                 <h3 style="font-family:verdana;">Teknologiforståelse</h3>
                 <p>Kor bra eg forstår teknologi</p>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -73,6 +38,14 @@
         <p>&copy; 2025 Code Buddie's</p>
     </footer>
 
+    <script>
+        // Load menu
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sideMenuContainer').innerHTML = data;
+            });
+    </script>
     <script src="Js/Side menu.js"></script>
 </body>
 </html>
