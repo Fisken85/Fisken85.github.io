@@ -16,8 +16,17 @@ function closeMenu() {
     document.getElementById("sideMenu").style.width = "0";
 }
 
-// Dropdown
+// Dropdown with animation and arrow flip
 function toggleDropdown(dropdownId) {
     var dropdown = document.getElementById(dropdownId);
-    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+    var button = dropdown.previousElementSibling;
+    var arrow = button.querySelector('.arrow');
+
+    if (dropdown.classList.contains('active')) {
+        dropdown.classList.remove('active');
+        arrow.classList.remove('rotate');
+    } else {
+        dropdown.classList.add('active');
+        arrow.classList.add('rotate');
+    }
 }
