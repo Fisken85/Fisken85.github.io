@@ -16,7 +16,7 @@ function closeMenu() {
     document.getElementById("sideMenu").style.width = "0";
 }
 
-// Dropdown with animation and arrow flip
+// Dropdown med animasjon og arrow flip
 function toggleDropdown(dropdownId) {
     var dropdown = document.getElementById(dropdownId);
     var button = dropdown.previousElementSibling;
