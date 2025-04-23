@@ -33,6 +33,9 @@ header {
     overflow-x: hidden;
     transition: width 0.5s;
     padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .side-menu a {
@@ -42,6 +45,7 @@ header {
     color: white;
     display: block;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .side-menu a:hover {
@@ -78,6 +82,7 @@ header {
     width: 100%;
     text-align: left;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .dropdown-btn .arrow {
