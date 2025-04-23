@@ -45,7 +45,6 @@ header {
     color: white;
     display: block;
     transition: 0.3s;
-    white-space: nowrap;
 }
 
 .side-menu a:hover {
