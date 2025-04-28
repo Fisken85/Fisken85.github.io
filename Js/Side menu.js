@@ -8,15 +8,15 @@ function loadMenu() {
 
 function toggleMenu() {
     var menu = document.getElementById("sideMenu");
-    menu.classList.toggle('closed');
+    menu.classList.toggle('open'); // Toggle open class to slide the menu in and out
 }
 
 function closeMenu() {
-    document.getElementById("sideMenu").classList.add('closed');
+    document.getElementById("sideMenu").classList.remove('open'); // Close the menu when clicking the X
 }
 
 function openMenu() {
-    document.getElementById("sideMenu").classList.remove('closed');
+    document.getElementById("sideMenu").classList.add('open'); // Force open the menu
 }
 
 function toggleDropdown(dropdownId) {

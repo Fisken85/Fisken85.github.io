@@ -36,11 +36,11 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     transition: transform 0.3s ease;
-    transform: translateX(0);
+    transform: translateX(-250px); /* Initially off-screen */
 }
 
-.side-menu.closed {
-    transform: translateX(-250px);
+.side-menu.open {
+    transform: translateX(0); /* Slide in when opened */
 }
 
 .side-menu a {
@@ -106,9 +106,6 @@ header {
     transform: rotate(225deg);
 }
 
-.side-menu.open {
-    transform: translateX(0);
-}
 
 .content {
     max-width: 800px;
