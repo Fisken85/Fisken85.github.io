@@ -24,18 +24,23 @@ header {
 
 .side-menu {
     height: 100%;
-    width: 0;
+    width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     background-color: #333;
     overflow-x: hidden;
-    transition: width 0.5s;
     padding-top: 60px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.side-menu.closed {
+    transform: translateX(-250px);
 }
 
 .side-menu a {
@@ -69,7 +74,7 @@ header {
 
 .dropdown-container.active {
     display: block;
-    max-height: 500px; 
+    max-height: 500px;
 }
 
 .dropdown-btn {
@@ -98,11 +103,11 @@ header {
 }
 
 .dropdown-btn .arrow.rotate {
-    transform: rotate(180deg);
+    transform: rotate(225deg);
 }
 
 .side-menu.open {
-    width: 250px;
+    transform: translateX(0);
 }
 
 .content {

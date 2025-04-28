@@ -8,14 +8,17 @@ function loadMenu() {
 
 function toggleMenu() {
     var menu = document.getElementById("sideMenu");
-    menu.style.width = (menu.style.width === "250px") ? "0" : "250px";
+    menu.classList.toggle('closed');
 }
 
 function closeMenu() {
-    document.getElementById("sideMenu").style.width = "0";
+    document.getElementById("sideMenu").classList.add('closed');
 }
 
-// Dropdown med animasjon og arrow flip
+function openMenu() {
+    document.getElementById("sideMenu").classList.remove('closed');
+}
+
 function toggleDropdown(dropdownId) {
     var dropdown = document.getElementById(dropdownId);
     var button = dropdown.previousElementSibling;
