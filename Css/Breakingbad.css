@@ -1,0 +1,31 @@
+body {
+    background-color: #621c1cde;
+    color: #43b739;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#quote {
+    font-size: x-large;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#author {
+    margin: 20px;
+    font-style: italic;
+}
+
+#author-image img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}
+
