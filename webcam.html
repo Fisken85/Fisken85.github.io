@@ -45,7 +45,7 @@
 
       if (results.multiHandLandmarks) {
         results.multiHandLandmarks.forEach((landmarks, index) => {
-          // Draw hand landmarks and connections
+          // Tegner håndlandmerker
           canvasCtx.strokeStyle = 'lime';
           canvasCtx.lineWidth = 2;
           HAND_CONNECTIONS.forEach(pair => {
@@ -57,7 +57,7 @@
             canvasCtx.stroke();
           });
 
-          // Detect fingers up/down and assign values
+          // Verdi til kvar finger
           const thumbUp = Math.abs(landmarks[4].x - landmarks[0].x) > 0.1 ? 1 : 0;
           const indexUp = landmarks[8].y < landmarks[6].y ? 1 : 0;
           const middleUp = landmarks[12].y < landmarks[10].y ? 1 : 0;
@@ -66,19 +66,18 @@
 
           const binaryValue = (thumbUp * 1) + (indexUp * 2) + (middleUp * 4) + (ringUp * 8) + (pinkyUp * 16);
 
-          // Determine which hand by handedness if available
           const wristX = landmarks[0].x;
           const canvasCenterX = 0.5;
 
           if (wristX > canvasCenterX) {
-            // Appears on the right side of the canvas (which is actually left hand)
+            // Høgre flippa til venstre
             leftBinaryValue = binaryValue;
           } else {
-            // Appears on the left side of the canvas (which is actually right hand)
+            // Venstre flippa til høyre
             rightBinaryValue = binaryValue;
           }
 
-          // Draw keypoints
+          // Tegner håndlandmerker
           landmarks.forEach(landmark => {
             const x = landmark.x * canvasElement.width;
             const y = landmark.y * canvasElement.height;
@@ -90,7 +89,7 @@
         });
       }
 
-      // Update displays
+      // Oppdaterer binære verdier
       leftBinaryDisplay.textContent = `Left Hand: Value: ${leftBinaryValue}`;
       rightBinaryDisplay.textContent = `Right Hand: Value: ${rightBinaryValue}`;
 
