@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finger Up/Down Binary</title>
+  <link rel="stylesheet" href="Css/AI_styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+<body>
+  <div id="container">
+    <video class="input_video" autoplay playsinline muted></video>
+    <canvas class="output_canvas"></canvas>
+    <div id="left-binary-display">Left Hand: Binary: 00000</div>
+    <div id="right-binary-display">Right Hand: Binary: 00000</div>
+  </div>
+
+  <script>
+    const videoElement = document.querySelector('.input_video');
+    const canvasElement = document.querySelector('.output_canvas');
+    const canvasCtx = canvasElement.getContext('2d');
+    const leftBinaryDisplay = document.getElementById('left-binary-display');
+    const rightBinaryDisplay = document.getElementById('right-binary-display');
+
+    const HAND_CONNECTIONS = [
+      [0,1],[1,2],[2,3],[3,4],
+      [0,5],[5,6],[6,7],[7,8],
+      [0,9],[9,10],[10,11],[11,12],
+      [0,13],[13,14],[14,15],[15,16],
+      [0,17],[17,18],[18,19],[19,20],
+      [5,9],[9,13],[13,17],[17,5]
+    ];
+
+    function onResults(results) {
+      canvasCtx.save();
+      canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+
+      canvasCtx.translate(canvasElement.width, 0);
+      canvasCtx.scale(-1, 1);
+      canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+
+      let leftBinaryValue = 0;
+      let rightBinaryValue = 0;
+
+      if (results.multiHandLandmarks) {
+        results.multiHandLandmarks.forEach((landmarks, index) => {
+          // Draw hand landmarks and connections
+          canvasCtx.strokeStyle = 'lime';
+          canvasCtx.lineWidth = 2;
+          HAND_CONNECTIONS.forEach(pair => {
+            const start = landmarks[pair[0]];
+            const end = landmarks[pair[1]];
+            canvasCtx.beginPath();
+            canvasCtx.moveTo(start.x * canvasElement.width, start.y * canvasElement.height);
+            canvasCtx.lineTo(end.x * canvasElement.width, end.y * canvasElement.height);
+            canvasCtx.stroke();
+          });
+
+          // Detect fingers up/down and assign values
+          const thumbUp = Math.abs(landmarks[4].x - landmarks[0].x) > 0.1 ? 1 : 0;
+          const indexUp = landmarks[8].y < landmarks[6].y ? 1 : 0;
+          const middleUp = landmarks[12].y < landmarks[10].y ? 1 : 0;
+          const ringUp = landmarks[16].y < landmarks[14].y ? 1 : 0;
+          const pinkyUp = landmarks[20].y < landmarks[18].y ? 1 : 0;
+
+          const binaryValue = (thumbUp * 1) + (indexUp * 2) + (middleUp * 4) + (ringUp * 8) + (pinkyUp * 16);
+
+          // Determine which hand by handedness if available
+          const wristX = landmarks[0].x;
+          const canvasCenterX = 0.5;
+
+          if (wristX > canvasCenterX) {
+            // Appears on the right side of the canvas (which is actually left hand)
+            leftBinaryValue = binaryValue;
+          } else {
+            // Appears on the left side of the canvas (which is actually right hand)
+            rightBinaryValue = binaryValue;
+          }
+
+          // Draw keypoints
+          landmarks.forEach(landmark => {
+            const x = landmark.x * canvasElement.width;
+            const y = landmark.y * canvasElement.height;
+            canvasCtx.beginPath();
+            canvasCtx.arc(x, y, 6, 0, 2 * Math.PI);
+            canvasCtx.fillStyle = 'lime';
+            canvasCtx.fill();
+          });
+        });
+      }
+
+      // Update displays
+      leftBinaryDisplay.textContent = `Left Hand: Value: ${leftBinaryValue}`;
+      rightBinaryDisplay.textContent = `Right Hand: Value: ${rightBinaryValue}`;
+
+      canvasCtx.restore();
+    }
+
+    const hands = new Hands({
+      locateFile: (file) => `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`
+    });
+
+    hands.setOptions({
+      maxNumHands: 2,
+      modelComplexity: 1,
+      minDetectionConfidence: 0.7,
+      minTrackingConfidence: 0.7
+    });
+
+    hands.onResults(onResults);
+
+    navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } })
+      .then((stream) => {
+        videoElement.srcObject = stream;
+        videoElement.play();
+
+        videoElement.onloadedmetadata = () => {
+          canvasElement.width = videoElement.videoWidth;
+          canvasElement.height = videoElement.videoHeight;
+          startProcessing();
+        };
+      })
+      .catch((error) => {
+        console.error('Camera error:', error);
+        alert('Gi oss kamera tilgang for å bruke denne funksjonen.');
+      });
+
+    function startProcessing() {
+      const process = async () => {
+        await hands.send({ image: videoElement });
+        requestAnimationFrame(process);
+      };
+      process();
+    }
+  </script>
+</body>
+</html>
