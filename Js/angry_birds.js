@@ -32,7 +32,6 @@ function animerFugl() {
         if (!bevegerSeg) return;
 
         const skjermBredde = window.innerWidth;
-        // Use viewport height plus current scroll position as max Y boundary
         const maksHoyde = window.innerHeight + window.pageYOffset;
 
         posX += fartX;
