@@ -36,11 +36,11 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     transition: transform 0.3s ease;
-    transform: translateX(-250px); /* Initially off-screen */
+    transform: translateX(-250px);
 }
 
 .side-menu.open {
-    transform: translateX(0); /* Slide in when opened */
+    transform: translateX(0);
 }
 
 .side-menu a {

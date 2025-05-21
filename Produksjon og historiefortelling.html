@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produksjon og historiefortelling</title>
     <link rel="stylesheet" href="Css/Styles.css">
+    <link rel="icon" href="Bilder/favicon_kvit.png" id="dynamisk-favicon" type="image/png" />
+    <script src="Js/Favicon.js" defer></script>
 </head>
 
 <body>
@@ -16,43 +18,44 @@
 
     <div id="sideMenuContainer"></div>
 
-    
     <div class="Forsvunnet-i-IKEA" style="text-align: center;">
         <h2>Video som eg har redigert</h2>
-         <iframe width="1000" height="600" src="https://www.youtube.com/embed/HbPAS4WUwiU">
-         </iframe>
-         
+        <iframe width="1000" height="600" src="https://www.youtube.com/embed/HbPAS4WUwiU"></iframe>
+
         <h2>Mitt visitkort</h2>
-<label for="visitkort_front">
-    <img src="Bilder/Visitkort_front.jpg" alt="Eit monogram eg har laga på visitkortet mitt" class="clickable-image">
-</label>
-<input type="checkbox" id="visitkort_front" class="overlay-toggle">
-<div class="overlay">
-    <label class="overlay-content" for="visitkort_front">
-        <img src="Bilder/Visitkort_front.jpg" alt="Eit monogram eg har laga på visitkortet mitt" class="overlay-image">
-    </label>
-</div>
 
-<label for="visitkort_bak">
-    <img src="Bilder/Visitkort_kontakt_info.jpg" alt="Bakdelen av visitkortet mitt, som viser min kontakinformasjon" class="clickable-image">
-</label>
-<input type="checkbox" id="visitkort_bak" class="overlay-toggle">
-<div class="overlay">
-    <label class="overlay-content" for="visitkort_bak">
-        <img src="Bilder/Visitkort_kontakt_info.jpg" alt="Bakdelen av visitkortet mitt, som viser min kontakinformasjon" class="overlay-image">
-    </label>
-</div>
+        <label for="visitkort_front">
+            <img src="Bilder/Visitkort_front.jpg" alt="Eit monogram eg har laga på visitkortet mitt" class="clickable-image">
+        </label>
+        <input type="checkbox" id="visitkort_front" class="overlay-toggle">
+        <div class="overlay">
+            <div class="overlay-content">
+                <img src="Bilder/Visitkort_front.jpg" alt="Eit monogram eg har laga på visitkortet mitt" class="overlay-image">
+            </div>
+        </div>
 
+        <label for="visitkort_bak">
+            <img src="Bilder/Visitkort_kontakt_info.jpg" alt="Bakdelen av visitkortet mitt, som viser min kontakinformasjon" class="clickable-image">
+        </label>
+        <input type="checkbox" id="visitkort_bak" class="overlay-toggle">
+        <div class="overlay">
+            <div class="overlay-content">
+                <img src="Bilder/Visitkort_kontakt_info.jpg" alt="Bakdelen av visitkortet mitt, som viser min kontakinformasjon" class="overlay-image">
+            </div>
+        </div>
 
-<footer>
-    <p>&copy; <span id="year"></span> Code Buddie's</p>
-</footer>
+        <img src="Bilder/Angry birds.png" alt="Angry Bird" id="bouncing-image" />
+    </div>
 
-<script src="/Js/footer.js"></script>
+    <div class="Forsvunnet-i-IKEA" style="text-align: center;">
+        <h2>Angry Birds</h2>
 
+    <footer>
+        <p>&copy; <span id="year"></span> Code Buddie's</p>
+    </footer>
 
+    <script src="/Js/footer.js"></script>
     <script>
-        // Load menu
         fetch('menu.html')
             .then(response => response.text())
             .then(data => {
@@ -60,6 +63,8 @@
             });
     </script>
     <script src="Js/Side menu.js"></script>
+    <script src="Js/image_overlay.js"></script>
+    <script src="Js/angry_birds.js"></script>
 </body>
 
 </html>
