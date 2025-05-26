@@ -253,6 +253,7 @@ footer {
 
 .konsept_header {
     text-align: center;
+    font-size: larger;
 }
 
 .konsept_grid-container {
@@ -302,4 +303,9 @@ footer {
 .Fag_tittel {
     text-align: center;
     color: #4CAF50;
+}
+
+.centered-title_overskrift{
+    text-align: center;
+    font-size: 33px;
 }

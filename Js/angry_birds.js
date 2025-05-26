@@ -9,7 +9,7 @@ const breddeFugl = fugl.offsetWidth;
 const hoydeFugl = fugl.offsetHeight;
 
 let startX = 620;
-let startY = 1250;
+let startY = 1310;
 
 let posX = startX;
 let posY = startY;
@@ -31,13 +31,13 @@ function animerFugl() {
     function beveg() {
         if (!bevegerSeg) return;
 
-        const skjermBredde = window.innerWidth;
+        const skjermBredde = window.innerWidth
         const maksHoyde = window.innerHeight + window.pageYOffset;
 
         posX += fartX;
         posY += fartY;
 
-        if (posX <= -100) {
+        if (posX <= -200) {
             posX = -100;
             fartX = -fartX;
             fugl.style.transform = `scaleX(${fartX > 0 ? 1 : -1})`;
@@ -47,8 +47,8 @@ function animerFugl() {
             fugl.style.transform = `scaleX(${fartX > 0 ? 1 : -1})`;
         }
 
-        if (posY <= 0) {
-            posY = 0;
+        if (posY <= -120) {
+            posY = -100;
             fartY = -fartY;
         } else if (posY + hoydeFugl >= maksHoyde) {
             posY = maksHoyde - hoydeFugl;
