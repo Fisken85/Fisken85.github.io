@@ -9,7 +9,7 @@ const breddeFugl = fugl.offsetWidth;
 const hoydeFugl = fugl.offsetHeight;
 
 let startX = 620;
-let startY = 1310;
+let startY = 1985;
 
 let posX = startX;
 let posY = startY;
@@ -38,7 +38,7 @@ function animerFugl() {
         posY += fartY;
 
         if (posX <= -200) {
-            posX = -100;
+            posX = -200;
             fartX = -fartX;
             fugl.style.transform = `scaleX(${fartX > 0 ? 1 : -1})`;
         } else if (posX + breddeFugl >= skjermBredde) {
